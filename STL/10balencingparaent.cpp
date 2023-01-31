@@ -27,8 +27,37 @@ string isBalenced(string str)
         return "NO";
     }
 }
+//using unordered maps
+unordered_map<char,int> m={{'[',-1},{'(',-2},{'{',-3},{')',2},{']',1},{'}',3}};
+string isBalenced(string s)
+{
+    stack<char> st;
+    for(char bracket : s)
+    {
+        if(m[bracket]<0)
+        {
+            st.push(bracket);
+        }
+        else
+        {
+            char ch=st.top();
+            st.pop();
+            if((m[ch]+m[bracket])!=0)
+            {
+                return "NO";
+            }
+        }
+    }
+    if(st.empty())
+    {
+        return "Yes";
+    }
+    return "No";
+
+}
 int main()
 {
+    inserting a vector into a stack
     /*stack<vector<int>> s;
     int n;
     cin>>n;
