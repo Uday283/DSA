@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 /*Given an array of integers arr, return true if the number of occurrences of each value in the array is unique or false otherwise.*/
+https://leetcode.com/problems/unique-number-of-occurrences
 bool unique(vector<int> &v)
 {
     /*
