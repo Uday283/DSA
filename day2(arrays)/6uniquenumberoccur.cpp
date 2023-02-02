@@ -10,25 +10,13 @@ bool unique(vector<int> &v)
     {
         ma[v[i]]++;
     }
-    for(auto value : ma)
+    unordered_set<int> s;
+    for(auto i:ma)
     {
-        int cnt=0;
-        for(auto i :ma)
-        {
-            if(i.second==value.second)
-            {
-                cnt++;
-            }
-        }
-        if(cnt>1)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
-    }*/
+        s.insert(i.second);
+    }
+    return s.size()==ma.size();
+    */
     sort(v.begin(),v.end());
     vector <int> ans;
     int cnt=1;
